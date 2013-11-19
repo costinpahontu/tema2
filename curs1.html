@@ -2,14 +2,73 @@
 <html>
 	<head>
 	<link href="curs.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<title>Titlu</title>
+		<script>
+		
+		$(function() {
+		               $('#formular').submit(function(e) {
+                                        // Putem modifica evenimentele pentru a preveni actiunile default
+                                        // de exemplu un request HTTP
+									
+										    e.preventDefault();
+										
+										
+										
+										
+										var nume=$('#nume').val();
+										var pren=$('#prenume').val();
+										var fac=$('#facultate').val();
+										
+										$('#tabel tr:last').after('<tr><td>' + nume + '</td><td> '+pren+'</td><td>'+fac+'</td></tr>');
+										
+						$(' td').click(function(e){
+					 
+					 $(this).css('visibility','hidden');
+					      
+					 }
+		);
+                                        
+                                });
+		                
+		             $(' td').click(function(e){
+					 
+					 $(this).css('visibility','hidden');
+					      
+					 }
+		);
+		});
+		
+		$(document).ready(function() {
+		 $('#incarca-date-prin-ajax').click(function() {
+                                        $.ajax({
+                                                url: "pt_ajax.txt",
+                                               
+												dataType: "text",
+                                                success: function(data) {
+                                                        $('#date').html(data);
+                                                }
+                                        });
+                                });
+		});
+		</script>
 	</head>
 	<body >
 		
 		<p class="lsita">  lista studenti</p>
+		
+		<form id="formular">
+                        <input id="nume" placeholder="nume" type="text" />
+                        <input id="prenume" placeholder="prenume" type="text" />
+						<input id="facultate" placeholder="facultate" type="text" />
+                        <input id="submit-formular" type="submit" />
+       </form>
+		
 		<div id="alt">
+		
+		
 <hr>
-		<table class="main-table" >
+		<table class="main-table" id="tabel">
 			<thead class="second1"> 
 				<tr class="rest">
 					<td>nume</td>
@@ -35,7 +94,11 @@
 				</tr>
 			</tbody>
 		</table>
-<hr>
+
+		
+		<button id="incarca-date-prin-ajax"> incarca text</button>
+		<div id="date"></div>
+		
 		</div>
 
 		
