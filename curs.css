@@ -1,0 +1,52 @@
+body{
+    width: 1000px;
+	height:750px;
+	margin: auto;
+ 
+	margin-top:200px;
+	margin-left:300px;
+}
+.lsita{ 
+ font-weight: bold;
+ border-bottom-color: 1px solid red;
+ text-shadow: 1px 1px black;
+ }
+
+ 
+ }
+.main-table{
+border:1px solid black;}
+
+.second1 {
+				background-color: red;
+				font-weight: bold;
+				font-size: 1.2em;
+				border:1px solid black;
+				
+				
+			}
+
+.second2 { background-color: green;
+				font-weight: bold;
+				font-size: 1.2em;
+				border:1px solid black;
+				}
+
+.rest{
+				padding: 5px;
+				border:1px solid black;
+			}
+
+.rest  td {
+				text-align: center;
+				border:1px solid black;
+			}
+.jos {
+                padding: 5px;
+				border:1px solid black;
+				text-align: center;
+				
+ 
+}
+.jos td{border-bottom:2px solid red;
+}
